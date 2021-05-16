@@ -2240,6 +2240,13 @@
     hoist-non-react-statics "^3.2.1"
     lodash.merge "^4.6.1"
 
+"@ui-kitten/eva-icons@^5.1.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@ui-kitten/eva-icons/-/eva-icons-5.1.0.tgz#0c9c3c1de303c05937f955808a3effd3c517e432"
+  integrity sha512-f96QGp4w61FM1tRfCzW5N2l+a0ToR0wdTU79yY3rMaO9sf0whTNn0+ciz4BFK1cTSn14BtshPLxtphzkhwCfGg==
+  dependencies:
+    react-native-eva-icons "^1.3.1"
+
 "@unimodules/core@~7.1.0":
   version "7.1.0"
   resolved "https://registry.yarnpkg.com/@unimodules/core/-/core-7.1.0.tgz#69139bcfecbacd23778142b2f463605a131cafb5"
@@ -3782,6 +3789,11 @@ etag@~1.8.1:
   resolved "https://registry.yarnpkg.com/etag/-/etag-1.8.1.tgz#41ae2eeb65efa62268aebfea83ac7d79299b0887"
   integrity sha1-Qa4u62XvpiJorr/qg6x9eSmbCIc=
 
+eva-icons@^1.1.3:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/eva-icons/-/eva-icons-1.1.3.tgz#d4a88a93e92250c769703eb90920752ab0f72c0a"
+  integrity sha512-QBSEWNbEx1H0numXP1qgxKVCZHonRaky5ft4pGzQBcO4cy7mEja6TuJ8rc7BqX2pmkvetVQWKDH+DK/8y7GTag==
+
 event-target-shim@^5.0.0, event-target-shim@^5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/event-target-shim/-/event-target-shim-5.0.1.tgz#5d4d3ebdf9583d63a5333ce2deb7480ab2b05789"
@@ -3883,6 +3895,14 @@ expo-asset@~8.3.1:
     md5-file "^3.2.3"
     path-browserify "^1.0.0"
     url-parse "^1.4.4"
+
+expo-barcode-scanner@~10.1.2:
+  version "10.1.2"
+  resolved "https://registry.yarnpkg.com/expo-barcode-scanner/-/expo-barcode-scanner-10.1.2.tgz#51e3d176124862273073bbf8fb542534cb2f1e27"
+  integrity sha512-MNu25UZsXr+O7GhV9BV6Mm2XDBRhtwHp1XPSRUB0hmAAQXs3672ELt/Irm4UGcET4RFprgH448Utt/2Fbi8Qaw==
+  dependencies:
+    "@expo/config-plugins" "^1.0.18"
+    unimodules-permissions-interface "~6.1.0"
 
 expo-constants@~10.1.3:
   version "10.1.3"
@@ -7092,6 +7112,11 @@ react-is@^17.0.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.2.tgz#e691d4a8e9c789365655539ab372762b0efb54f0"
   integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
 
+react-native-eva-icons@^1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/react-native-eva-icons/-/react-native-eva-icons-1.3.1.tgz#1e6e019b0fd3cb1669db50bd6bbdaa6d89327593"
+  integrity sha512-emd/aYXuOacuDVTx0SJoLi+xsOdCNdljQB3PTNCM9AQ3m/smG0X1TN0+ihelPO7MqoHzaH0h6lbANtwxGUy8Fw==
+
 react-native-gesture-handler@~1.10.2:
   version "1.10.3"
   resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-1.10.3.tgz#942bbf2963bbf49fa79593600ee9d7b5dab3cfc0"
@@ -7128,10 +7153,10 @@ react-native-screens@~3.0.0:
   resolved "https://registry.yarnpkg.com/react-native-screens/-/react-native-screens-3.0.0.tgz#ee4c2d69abf7411603868b57214feec5e8f637fa"
   integrity sha512-35II5oxTaVp3OP8y0eLPOPpQkxG4fRKQ+dL1YSE1we5kCZFOU0l/Rn0T79HbyUu1LPwUZr6lZupPs0ULnRyMuQ==
 
-react-native-svg@^12.1.1:
-  version "12.1.1"
-  resolved "https://registry.yarnpkg.com/react-native-svg/-/react-native-svg-12.1.1.tgz#5f292410b8bcc07bbc52b2da7ceb22caf5bcaaee"
-  integrity sha512-NIAJ8jCnXGCqGWXkkJ1GTzO4a3Md5at5sagYV8Vh4MXYnL4z5Rh428Wahjhh+LIjx40EE5xM5YtwyJBqOIba2Q==
+react-native-svg@12.1.0:
+  version "12.1.0"
+  resolved "https://registry.yarnpkg.com/react-native-svg/-/react-native-svg-12.1.0.tgz#acfe48c35cd5fca3d5fd767abae0560c36cfc03d"
+  integrity sha512-1g9qBRci7man8QsHoXn6tP3DhCDiypGgc6+AOWq+Sy+PmP6yiyf8VmvKuoqrPam/tf5x+ZaBT2KI0gl7bptZ7w==
   dependencies:
     css-select "^2.1.0"
     css-tree "^1.0.0-alpha.39"
@@ -8371,6 +8396,11 @@ unicode-property-aliases-ecmascript@^1.0.4:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/unicode-property-aliases-ecmascript/-/unicode-property-aliases-ecmascript-1.1.0.tgz#dd57a99f6207bedff4628abefb94c50db941c8f4"
   integrity sha512-PqSoPh/pWetQ2phoj5RLiaqIk4kCNwoV3CI+LfGmWLKI3rE3kl1h59XpX2BjgDrmbxD9ARtQobPGU1SguCYuQg==
+
+unimodules-permissions-interface@~6.1.0:
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/unimodules-permissions-interface/-/unimodules-permissions-interface-6.1.0.tgz#fd5589945e3b8fc9d2c80c52521853caea85a9ca"
+  integrity sha512-jeJx/y+Vn/Cp1/4su5XJ06UBul83MpXkYEqIOAb2jwaikhmj6tNwko7HpKy9OhfGfrhddCzwtedlro8xxZUk9A==
 
 union-value@^1.0.0:
   version "1.0.1"

@@ -32,16 +32,20 @@ export function HomeScreen({ navigation }: any) {
   const vendors = useStoreState((state) => state.vendors);
 
   console.log("data", vendors);
-  // console.log("error", error);
+  console.log("error", error);
 
   useEffect(() => {
     setVendors(data?.vendors ?? []);
   }, [data]);
 
+  const onVendorPress = (vendor: Vendor) => () => {
+    navigation.navigate("Vendor", { vendor });
+  };
+
   const renderItem = ({ item }: { item: Vendor }) => {
     console.log("item", { item });
     return (
-      <Card>
+      <Card onPress={onVendorPress(item)}>
         <Text>{item.name}</Text>
       </Card>
     );
@@ -50,6 +54,7 @@ export function HomeScreen({ navigation }: any) {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <Layout style={{ flex: 1, marginTop: Constants.statusBarHeight }}>
+        <TopNavigation title="LUNCHVERSITY" alignment="center" />
         <FlatList
           data={vendors}
           renderItem={renderItem}

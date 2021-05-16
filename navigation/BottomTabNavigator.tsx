@@ -12,7 +12,7 @@ import Colors from "../constants/Colors";
 import useColorScheme from "../hooks/useColorScheme";
 import { HomeScreen } from "../screens/HomeScreen";
 import TabTwoScreen from "../screens/TabTwoScreen";
-import { BottomTabParamList, TabOneParamList, TabTwoParamList } from "../types";
+import { BottomTabParamList, TabOneParamList, TabTwoParamList } from "./types";
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
