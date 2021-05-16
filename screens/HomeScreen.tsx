@@ -17,9 +17,10 @@ export function HomeScreen({ navigation }: any) {
     }
   `);
 
-  useEffect(() => {
-    console.log("data", { data });
-  }, [data]);
+  console.log("data", { data });
+  // useEffect(() => {
+  //   console.log("data", { data });
+  // }, [data]);
 
   const navigateDetails = () => {
     navigation.navigate("Details");

@@ -16,7 +16,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const cache = new InMemoryCache();
 const client = new ApolloClient({
-  uri: "localhost:8080/graphql",
+  uri: "172.20.1.128:8:8080/graphql",
   cache,
 });
 
