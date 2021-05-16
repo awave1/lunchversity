@@ -1,41 +1,60 @@
 import React, { useEffect } from "react";
-import { Button, Divider, Layout, TopNavigation } from "@ui-kitten/components";
-import { SafeAreaView, StyleSheet } from "react-native";
+import {
+  Button,
+  Text,
+  Divider,
+  Layout,
+  TopNavigation,
+} from "@ui-kitten/components";
+import { FlatList, SafeAreaView, StyleSheet } from "react-native";
 import { gql, useQuery } from "@apollo/client";
 
 import EditScreenInfo from "../components/EditScreenInfo";
-import { Text, View } from "../components/Themed";
+import { View } from "../components/Themed";
 import AppLoading from "expo-app-loading";
+import { useStoreActions, useStoreState } from "../store/hooks";
+import { Card, List, ListItem } from "@ui-kitten/components";
+import { Vendor } from "../store";
+import Constants from "expo-constants";
+
+const GET_VENDORS = gql`
+  query {
+    vendors {
+      name
+      id
+    }
+  }
+`;
 
 export function HomeScreen({ navigation }: any) {
-  const { data, loading } = useQuery(gql`
-    query Vendors {
-      vendors {
-        name
-        id
-      }
-    }
-  `);
+  const { data, loading, error } = useQuery<{ vendors: Vendor[] }>(GET_VENDORS);
+  const setVendors = useStoreActions((action) => action.setVendors);
+  const vendors = useStoreState((state) => state.vendors);
 
-  console.log("data", { data });
-  // useEffect(() => {
-  //   console.log("data", { data });
-  // }, [data]);
+  console.log("data", vendors);
+  // console.log("error", error);
 
-  const navigateDetails = () => {
-    navigation.navigate("Details");
+  useEffect(() => {
+    setVendors(data?.vendors ?? []);
+  }, [data]);
+
+  const renderItem = ({ item }: { item: Vendor }) => {
+    console.log("item", { item });
+    return (
+      <Card>
+        <Text>{item.name}</Text>
+      </Card>
+    );
   };
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <Layout
-        style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
-      >
-        {loading ? (
-          <AppLoading />
-        ) : (
-          <Button onPress={navigateDetails}>OPEN DETAILS</Button>
-        )}
+      <Layout style={{ flex: 1, marginTop: Constants.statusBarHeight }}>
+        <FlatList
+          data={vendors}
+          renderItem={renderItem}
+          keyExtractor={(item) => item.id.toString()}
+        />
       </Layout>
     </SafeAreaView>
   );
@@ -47,13 +66,18 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  title: {
-    fontSize: 20,
-    fontWeight: "bold",
-  },
   separator: {
     marginVertical: 30,
     height: 1,
     width: "80%",
+  },
+  item: {
+    backgroundColor: "#f9c2ff",
+    padding: 20,
+    marginVertical: 8,
+    marginHorizontal: 16,
+  },
+  title: {
+    fontSize: 32,
   },
 });

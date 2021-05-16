@@ -1,4 +1,5 @@
-import { createStore } from "easy-peasy";
+import { action, Action, createStore, thunk } from "easy-peasy";
+import { Thunk } from "graphql";
 
 export interface User {
   id: number;
@@ -18,6 +19,7 @@ export interface Vendor {
 export interface StoreModel {
   user: User;
   vendors: Vendor[];
+  setVendors: Action<StoreModel, Vendor[]>;
 }
 
 export const userModel: User = {
@@ -31,6 +33,9 @@ export const userModel: User = {
 export const storeModel: StoreModel = {
   user: userModel,
   vendors: [],
+  setVendors: action((state, payload) => {
+    state.vendors = payload;
+  }),
 };
 
 export const store = createStore(storeModel);
