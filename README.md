@@ -2,7 +2,7 @@
 
 > Lunchversity is a stamp management platform that incentivizes students to use reusable containers at the university restaurants
 
-Lunchversity is a React Native app built with expo.
+Lunchversity is a React Native app built with expo. Mockups: [https://www.figma.com/file/wVl7JB32IVVD05H82z6eWS/LUNCHVERSITY?node-id=1%3A64](https://www.figma.com/file/wVl7JB32IVVD05H82z6eWS/LUNCHVERSITY?node-id=1%3A64)
 
 ## Prerequisites
 
